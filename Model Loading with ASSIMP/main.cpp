@@ -83,7 +83,7 @@ int main()
 
     // load models
     //Model ourModel((char*)"resources/Link/Adult Link.fbx");
-    Model ourModel((char*)"resources/NiGHTS/NiGHTS.obj");
+    Model ourModel((char*)"resources/Link/Adult Link.fbx");
 
     // tell opengl for each sampler to which texture unit it belongs to (only has to be done once)
     // -------------------------------------------------------------------------------------------
@@ -121,7 +121,7 @@ int main()
         glm::mat4 model = glm::mat4(1.0f);
         model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f)); // translate it down so it's at the center of the scene
         model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));	// it's a bit too big for our scene, so scale it down
-        //model = glm::rotate(model, float(-PI/2), glm::vec3(1.0f, 0.0f, 0.0f));
+        model = glm::rotate(model, float(-PI/2), glm::vec3(1.0f, 0.0f, 0.0f));
         ourShader.setMat4("model", model);
         ourModel.Draw(ourShader);
 
